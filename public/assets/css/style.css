@@ -58,6 +58,8 @@ body
 .nav-item .active
 {
   background:#00275E;
+  border-radius:5px;
+  padding-left:15px;
 }
 /*CIRCLE SLIDER PORTION*/
 /* ============================= main menu_splash ====================== */

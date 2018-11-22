@@ -26,13 +26,19 @@
 
                   </div>
                   <div class="row">
-                    <div class="col-md-6 pr-md-1">
+                    <div class="col-md-4 pr-md-1">
                       <div class="form-group">
                         <label>First Name</label>
                         <input type="text" class="form-control" placeholder="Company" value="Ram">
                       </div>
                     </div>
-                    <div class="col-md-6 pl-md-1">
+                    <div class="col-md-4 pr-md-1">
+                      <div class="form-group">
+                        <label>Middle Name</label>
+                        <input type="text" class="form-control" placeholder="Company" value="Prasad">
+                      </div>
+                    </div>
+                    <div class="col-md-4 pl-md-1">
                       <div class="form-group">
                         <label>Last Name</label>
                         <input type="text" class="form-control" placeholder="Last Name" value="Shrestha">
@@ -65,7 +71,7 @@
                   <div class="row">
                     <div class="col-md-3 pr-md-1">
                       <div class="form-group">
-                        <label>Gender (disabled)</label>
+                        <label>Gender</label>
                         <select class="form-control" id="exampleFormControlSelect1">
                            <option>Male</option>
                            <option>Female</option>
@@ -75,7 +81,7 @@
                     <div class="col-md-3 px-md-1">
                       <div class="form-group">
                         <label>User Type (disabled)</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" disabled>
                            <option>Admin</option>
                            <option>Moderator</option>
                            <option>User</option>
@@ -89,14 +95,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>About </label>
-                        <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Do not be scared of the truth because we need to restart the human foundation in truth </textarea>
-                      </div>
-                    </div>
-                  </div>
+
                 </form>
               </div>
               <div class="card-footer">
@@ -124,11 +123,7 @@
                   </center>
                 </div>
                 </p>
-                <center>
-                <div class="card-description">
-                  Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                </div>
-              </center>
+                
               </div>
               <div class="card-footer">
                 <div class="button-container">
