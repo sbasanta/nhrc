@@ -16,16 +16,16 @@
 // });
 
 Route::resource('/','IndexController');
-Route::resource('/book','BookController');
-Route::resource('/guideline','GuidelineController');
-Route::resource('/journal','JournalController');
-Route::resource('/newsletter','NewsletterController');
-Route::resource('/notice','NoticeController');
+Route::resource('/publication/book','BookController');
+Route::resource('/publication/report','ReportController');
+Route::resource('/publication/guideline','GuidelineController');
+Route::resource('/publication/newsletter','NewsletterController');
+Route::resource('/publication/journal','JournalController');
 Route::resource('/pressrelease','PressreleaseController');
-Route::resource('/report','ReportController');
-Route::resource('/speech','SpeechController');
-Route::resource('/activity','ActivityController');
-Route::resource('/profile','ProfileController');
-Route::resource('/photo','PhotoController');
-Route::resource('/video','VideoController');
 Route::resource('/radioprogram','RadioprogramController');
+Route::resource('/notice','NoticeController');
+Route::resource('/speech','SpeechController');
+Route::resource('/profile/activity','ActivityController');
+Route::resource('/profile/profile','ProfileController');
+Route::resource('/gallery/photo','PhotoController');
+Route::resource('/gallery/video','VideoController');

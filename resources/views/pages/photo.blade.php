@@ -17,7 +17,7 @@ Add New Album
         <div class="gallerydiv">
             <div class="row">
           <div class="card mr-3 mb-3" style="width: 13rem;">
-            <img class="card-img-top" src="images/album1.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{url('images/album1.jpg')}}" alt="Card image cap">
             <div class="card-body">
               <h6 class="card-title">International Conference on Addressing Impunity and Realizing Human Rights in South Asia (Inaugural Ceremony</h6>
               <p class="small">Posted On: 2018-06-18</p>
@@ -27,7 +27,7 @@ Add New Album
             </div>
           </div>
           <div class="card mr-3 mb-3" style="width: 13rem;">
-            <img class="card-img-top" src="images/album3.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{url('images/album3.jpg')}}" alt="Card image cap">
             <div class="card-body">
               <h6 class="card-title">Local Level Election 2074 Monitoring Report Submission by NHRC to Election Commission </h6>
               <p class="small">Posted On: 2018-06-22</p>
@@ -37,7 +37,7 @@ Add New Album
             </div>
           </div>
           <div class="card mr-3 mb-3" style="width: 13rem;">
-            <img class="card-img-top" src="images/album2.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{url('images/album2.jpg')}}" alt="Card image cap">
             <div class="card-body">
               <h6 class="card-title">Signing Ceremony of Activation Plan of NepalNHRC & QatarNHRC MoU on Migration</h6>
               <p class="small">Posted On: 2018-06-18</p>
@@ -47,7 +47,7 @@ Add New Album
             </div>
           </div>
           <div class="card mr-3 mb-3" style="width: 13rem;">
-            <img class="card-img-top" src="images/album4.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{url('images/album4.jpg')}}" alt="Card image cap">
             <div class="card-body">
               <h6 class="card-title">Memorandum submitted to NHRC by Civil Society regarding death of four children </h6>
               <p class="small">Posted On: 2018-06-18</p>
@@ -57,7 +57,7 @@ Add New Album
             </div>
           </div>
           <div class="card mr-3 mb-3" style="width: 13rem;">
-            <img class="card-img-top" src="images/album5.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{url('images/album5.jpg')}}" alt="Card image cap">
             <div class="card-body">
               <h6 class="card-title">NHRC Bangladesh Official Visit to Nepal</h6>
               <p class="small">Posted On: 2018-06-18</p>

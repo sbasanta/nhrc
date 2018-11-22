@@ -115,7 +115,7 @@
                     <div class="block block-three"></div>
                     <div class="block block-four"></div>
                     <a href="javascript:void(0)">
-                      <img class="avatar" src="images/default-avatar.png" alt="..." style="height:110px;width:110px;border-radius:100%;box-shadow:0.5px 1px 3px black;">
+                      <img class="avatar" src="{{asset('images/default-avatar.png')}}" alt="..." style="height:110px;width:110px;border-radius:100%;box-shadow:0.5px 1px 3px black;">
                       <h5 class="title">Ram Shrestha</h5>
                     </a>
                     <p class="description">

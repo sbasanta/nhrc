@@ -32,6 +32,6 @@
   </div>
 
   @include('partials.inc_footer')
-  
+
 </body>
 </html>

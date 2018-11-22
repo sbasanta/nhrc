@@ -7,13 +7,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100 slidercss" src="images/1.jpg" alt="First slide" >
+      <img class="d-block w-100 slidercss" src="{{asset('images/1.jpg')}}" alt="First slide" >
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100 slidercss" src="images/2.jpg" alt="Second slide" style="width:100%;">
+      <img class="d-block w-100 slidercss" src="{{asset('images/2.jpg')}}" alt="Second slide" style="width:100%;">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100 slidercss" src="images/4.jpg" alt="Third slide">
+      <img class="d-block w-100 slidercss" src="{{asset('images/4.jpg')}}" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -67,8 +67,7 @@ Add New Video
           </div>
         </div>
       </div> -->
-    </div>
-  </div>
+    
 
   <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="pressrelease" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
