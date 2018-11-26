@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
+use Session;
 class RegisterController extends Controller
 {
     /*
@@ -28,17 +31,17 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest');
+    // }
 
     /**
      * Get a validator for an incoming registration request.
@@ -49,9 +52,19 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:5|confirmed',
+            'employeeid' => 'max:255|unique:users',
+            'contact' => 'required|min:6|unique:users|max:255',
+            'firstname' => 'required|string|min:2|max:200',
+            'middlename' => 'sometimes|max:100',
+            'lastname' => 'required|string|min:2|max:200 ',
+            'contact' => 'min:5|max:50',
+            'address' => 'min:4|max:250',
+            'designation' => 'min:3|max:255',
+            'status' => 'required'
+
         ]);
     }
 
@@ -63,10 +76,38 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+          Session()->flash('success', 'User successfully registered.');
+
         return User::create([
-            'name' => $data['name'],
+            'username' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'employeeid' => $data['employeeid'],
+            'firstname' => $data['firstname'],
+            'middlename' => $data['middlename'],
+            'lastname' => $data['lastname'],
+            'contact' => $data['contact'],
+            'address' => $data['address'],
+            'gender' => $data['gender'],
+            'designation' => $data['designation'],
+            'user_type' => $data['user_type'],
+            'status' => $data['status'],
+
+
+// Session::flash('success','User Created');
+
+
         ]);
     }
+    public function register(Request $request)
+   {
+       $this->validator($request->all())->validate();
+
+       event(new Registered($user = $this->create($request->all())));
+
+       // $this->guard()->login($user);
+
+       return $this->registered($request, $user)
+                       ?: redirect()->back();
+   }
 }

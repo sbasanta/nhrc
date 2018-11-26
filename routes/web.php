@@ -29,3 +29,7 @@ Route::resource('/profile/activity','ActivityController');
 Route::resource('/profile/profile','ProfileController');
 Route::resource('/gallery/photo','PhotoController');
 Route::resource('/gallery/video','VideoController');
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

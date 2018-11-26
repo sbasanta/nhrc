@@ -50,19 +50,39 @@
 
     </ul>
     <ul class="col-md-2 navbar-nav" style="">
-      <li class="nav-item dropdown {{ Request::segment(1)=='profile' ? "active": "" }}" style="" >
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Ram Shrestha
-      </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item {{ Request::is('profile/profile') ? "active": "" }} " href="{{url('profile/profile')}}">Profile</a>
-        <a class="dropdown-item {{ Request::is('profile/activity') ? "active": "" }} " href="{{url('profile/activity')}}">Activity</a>
-        <a class="dropdown-item" href="#">Change Password</a>
+      <!-- Right Side Of Navbar -->
+      <ul class="navbar-nav ml-auto">
+          <!-- Authentication Links -->
+          @guest
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+              </li>
 
-          <a class="dropdown-item" href="#">LogOut</a>
+          @else
+              <li class="nav-item dropdown {{ Request::segment(1)=='profile' ? "active": "" }}"">
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                      {{ Auth::user()->firstname}} {{ Auth::user()->lastname}} <span class="caret"></span>
+                  </a>
 
-        </div>
-      </li>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                      <a class="dropdown-item {{ Request::is('profile/profile') ? "active": "" }} " href="{{url('profile/profile')}}">Profile</a>
+                      <a class="dropdown-item {{ Request::is('profile/activity') ? "active": "" }} " href="{{url('profile/activity')}}">Activity</a>
+                      <a class="dropdown-item {{ Request::is('register') ? "active": "" }}" href="/register">Register User</a>
+
+                      <a class="dropdown-item" href="#">Change Password</a>
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                         onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                          {{ __('Logout') }}
+                      </a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                      </form>
+                  </div>
+              </li>
+          @endguest
+      </ul>
     </ul>
 
   </div>

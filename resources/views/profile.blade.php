@@ -11,6 +11,7 @@
     @include('partials.inc_banner')
 
     @include('partials.inc_navbar')
+    {{-- @include('partials.inc_message') --}}
 
 
     <div class="row" style="padding:50px;">
@@ -18,6 +19,8 @@
       @include('partials.inc_side_navbar')
 
       <div class="col-md-10">
+        @include('partials.inc_message')
+
         @yield('profile-content')
       </div>
 
