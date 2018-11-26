@@ -23,7 +23,10 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
+    public function __construct()
+    {
+    $this->middleware('auth');
+    }
     use RegistersUsers;
 
     /**
