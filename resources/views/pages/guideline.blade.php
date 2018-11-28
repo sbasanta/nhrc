@@ -10,126 +10,46 @@
       <button type="button" class="btn btn-danger mb-3" data-toggle="modal" data-target="#guideline">
 Add New Guideline
 </button>
-
+  
       <table id="example" class="table table-striped table-bordered table-responsive" style="width:100%">
         <thead>
           <tr >
             <th>Upload Date</th>
             <th>Title</th>
-
             <th>Download</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
+          @foreach($guideline as $guidelines)
           <tr>
-            <td>2075-06-22</td>
-            <td> 	आयोगका मा.अध्यक्षले अन्तर्राष्ट्रिय सम्मेलनको प्रतिवेदन सार्वजनिक समारोहमा दिनुभएको मन्तब्य</td>
+            <td>{{date('j M Y', strtotime($guidelines->created_at))}}</td>
+            <td>{{$guidelines->etitle}} | {{$guidelines->ntitle}}</td>
 
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td> 	वेपत्तापारिएका व्यक्तिको छानबिन,सत्यनिरुपण तथा मेलमलिापआयोग ऐनसंशोधन विधेयक माथिआयोगकाे राय</td>
+         
+            <td><a href="{{route('guideline.show',$guidelines->id)}}" class="btn btn-outline-success  btn-sm">download file1</a>
 
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
+               @if($guidelines->file2 !== null)
 
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
+            <a href="{{url('publication/guideline/d',$guidelines->id)}}" class="btn btn-outline-success  btn-sm">download file2</a></td>
+            @endif
+            <td><a href="{{route('guideline.edit',$guidelines->id)}}" class="btn btn-primary btn-sm">Edit</a>
+              <form action="{{route('guideline.destroy',$guidelines->id)}}" method="post">
+                {{csrf_field()}}
+                @method('delete')
+                <input type="submit" name="delete" value="delete" class="btn btn-danger btn-sm">
+              </form>
+            </td>
           </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td> 	महिला मानवअधिकार रक्षकहरुको राष्ट्रियसञ्जाल आयोजित कार्यक्रममा आयोगका मा.अध्यक्षकाे मन्तब्य</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
-          <tr>
-            <td>2075-06-22</td>
-            <td>Monitoring Report of the House of Representative and State Assembly Election, 2017</td>
-
-            <td><button class="btn btn-outline-success  btn-sm">Download</button></td>
-          </tr>
+          @endforeach
+        </tbody>
 
         </tfoot>
       </table>
 
 
 
-<!-- Modal -->
+<!-- Modal to add new guideline-->
 <div class="modal fade bd-example-modal-lg" id="guideline" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
@@ -142,7 +62,8 @@ Add New Guideline
       <div class="modal-body">
 
 
-<form method="" action="" enctype="multipart/form-data" data-parsley-validate>
+<form action="{{route('guideline.store')}}" method="post" enctype="multipart/form-data" data-parsley-validate>
+  {{csrf_field()}}
 <div>
 
 <div class="form-group row">
@@ -150,7 +71,7 @@ Add New Guideline
   <label for="english_title" class="col-form-label"> Title </label>
 </div>
 <div class="col-md-10">
-  <input type="text" class="form-control" id="g_englishtitle" name="g_englishtitle" placeholder="Title in English" required minlength="6">
+  <input type="text" class="form-control" id="etitle" name="etitle" placeholder="Title in English" required minlength="6">
 </div>
 </div>
 
@@ -159,7 +80,7 @@ Add New Guideline
   <label for="nepalititle" class="col-form-label">Title (शीर्षक) </label>
 </div>
 <div class="col-md-10">
-  <input type="text" class="form-control" id="g_nepalititle" name="g_nepalititle" placeholder="Title in Nepali" minlength="6">
+  <input type="text" class="form-control" id="nepalititle" name="ntitle" placeholder="Title in Nepali" minlength="6">
 </div>
 </div>
 
@@ -168,7 +89,7 @@ Add New Guideline
   <label for="published_date" class="col-form-label"> Published Date </label>
 </div>
   <div class="col-md-10">
-  <input type="date"class="form-control" id="g_publishdate" name="g_publishdate" required/>
+  <input type="date"class="form-control" id="published_date" name="published_date" required/>
   </div>
 </div>
 
@@ -177,7 +98,7 @@ Add New Guideline
   <label for="link" class="col-form-label">Link/URL</label>
 </div>
   <div class="col-md-10">
-    <input type="text" class="form-control" id="g_link" name="g_link" placeholder="External link" data-parsley-type="url">
+    <input type="text" class="form-control" id="link" name="link" placeholder="External link" data-parsley-type="url">
   </div>
 </div>
 
@@ -186,7 +107,7 @@ Add New Guideline
   <label for="file-to-upload" class="col-form-label"> File1 </label>
 </div>
   <div class="col-md-10">
-    <input type="file" class="form-control" id="g_file1" name="g_file1" placeholder="file to upload" required>
+    <input type="file" class="form-control" id="file1" name="file1" placeholder="file to upload" required>
   </div>
 </div>
 <div class="form-group row">
@@ -194,14 +115,58 @@ Add New Guideline
   <label for="file-to-upload" class="col-form-label"> File2 </label>
 </div>
   <div class="col-md-10">
-    <input type="file" class="form-control" id="g_file2" name="g_file2" placeholder="file to upload">
+    <input type="file" class="form-control" id="file2" name="file2" placeholder="file to upload">
   </div>
 </div>
+<input type="hidden" name="status" id="status" value="1">
 
 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 <input type="reset"  class="btn btn-warning btn-md">
 <input type="submit" value="Add" class="btn btn-primary btn-md">
 </div>	</form>
+
+    </div>
+  </div>
+</div>
+</div>
+
+{{-- modal to edit guidelines --}} 
+<div class="modal fade bd-example-modal-lg" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Edit Guideline</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+       <form action="{{route('guideline.update','test')}}" method="POST" enctype="multipart/form-data">
+        {{csrf_field()}}
+          <div class="form-group row">
+          <div class="col-md-2">
+          <label for="etitle">Title in English</label>
+          </div>
+          <div class="col-md-10">
+          <input type="text" class="form-control" id="title" name="title" placeholder="Title in English">
+          </div>
+        </div>
+
+            <div class="form-group row">
+            <div class="col-md-2">
+            <label for="etitle">Title in Nepali</label>
+            </div>
+            <div class="col-md-10">
+            <input type="text" class="form-control" id="ntitle" name="ntitle" placeholder="Title in Nepali">
+            </div>
+          </div>
+
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <input type="reset"  class="btn btn-warning btn-md">
+        <input type="submit" value="save" class="btn btn-primary btn-md">
+        </div> 
+        </form>
 
     </div>
   </div>

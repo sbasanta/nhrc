@@ -138,9 +138,7 @@ Add New Album
 
 
 			    		</div>
-	</div>
-
-
+	         </div>
 			    	</div>
 
 

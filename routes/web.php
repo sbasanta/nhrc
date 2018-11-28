@@ -19,6 +19,9 @@ Route::resource('/','IndexController');
 Route::resource('/publication/book','BookController');
 Route::resource('/publication/report','ReportController');
 Route::resource('/publication/guideline','GuidelineController');
+//route to download file 2
+Route::get('/publication/guideline/d/{id}',['uses'=>'GuidelineController@download','as'=>'guideline.download']);
+
 Route::resource('/publication/newsletter','NewsletterController');
 Route::resource('/publication/journal','JournalController');
 Route::resource('/pressrelease','PressreleaseController');
