@@ -1,6 +1,13 @@
 @extends('main')
 
 @section('title', '| Report')
+@section('breadcrumb')
+  <li class="breadcrumb-item active" aria-current="page"><a href="#">Publication</a></li>
+  <li class="breadcrumb-item active" aria-current="page"><a href="{{url('publication/report')}}">Report</a></li>
+
+
+
+@endsection
 
 @section('content')
 
@@ -24,7 +31,7 @@
     @foreach($report as $row)
     <tr>
       <td>{{date('j M Y', strtotime($row->created_at))}}</td>
-      <td> {{$row->etitle}} | {{$row->ntitle}}</td>
+      <td> {{$row->etitle}} | {{$row->ntitle}} (<b>Published on: </b>{{date('M Y', strtotime($row->published_date))}})</td>
 
       <td>  <a href="{{route('report.download', $row->id)}}" class="btn work btn-outline-success btn-sm" target="_blank">Download File1</a>
         @if($row->file2!="")
@@ -128,7 +135,7 @@
               <input type="submit" value="Add" class="btn btn-primary btn-md">
             </div>
           </div>	</form>
-          
+
         </div>
       </div>
     </div>

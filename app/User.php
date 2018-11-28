@@ -36,4 +36,8 @@ class User extends Authenticatable
   {
     return $this->hasMany('App\Model\Guideline','addedby');
   }
+  public function reports()
+  {
+    return $this->hasMany('App\Model\Report','addedby');
+  }
 }

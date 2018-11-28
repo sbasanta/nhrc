@@ -36,7 +36,7 @@
                 <label for="nepalititle" class="col-form-label">Title (शीर्षक) </label>
               </div>
               <div class="col-md-8">
-                <textarea  class="form-control" id="ntitle" name="ntitle"  placeholder="Title in English" required minlength="6"> {{$book->ntitle}} </textarea>
+                <textarea  class="form-control" id="ntitle" name="ntitle"  placeholder="Title in Nepali"> {{$book->ntitle}} </textarea>
               </div>
             </div>
 
