@@ -30,6 +30,10 @@ Route::resource('/profile/profile','ProfileController');
 Route::resource('/gallery/photo','PhotoController');
 Route::resource('/gallery/video','VideoController');
 
+
+Route::get('/publication/book/d/{id}',['uses' => 'BookController@download','as' => 'book.download']);
+
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');

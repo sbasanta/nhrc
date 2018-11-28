@@ -3,6 +3,7 @@
 @section('title', '| Homepage')
 
 @section('content')
+  
 <div class="row" style="padding-left:20px;">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">

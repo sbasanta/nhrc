@@ -17,7 +17,7 @@ class JournalController extends Controller
      */
     public function index()
     {
-          	return view('pages.journal');
+          	return view('pages.journal.journal');
     }
 
     /**

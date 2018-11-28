@@ -17,7 +17,7 @@ class PressreleaseController extends Controller
      */
     public function index()
     {
-          	return view('pages.pressrelease');
+          	return view('pages.pressrelease.pressrelease');
     }
 
     /**

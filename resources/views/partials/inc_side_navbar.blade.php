@@ -11,9 +11,12 @@
   <li class="nav-item">
     <a class="nav-link" href="#">Change Password</a>
   </li>
+  @if(Auth::user()->user_type=='SuperAdmin' || Auth::user()->user_type=='Admin' )
+
   <li class="nav-item">
     <a class="nav-link {{ Request::is('register') ? "active": "" }}" href="/register">Regiser User</a>
   </li>
+@endif
   <li class="nav-item">
     <a class="nav-link" href="{{ route('logout') }}"
                        onclick="event.preventDefault();

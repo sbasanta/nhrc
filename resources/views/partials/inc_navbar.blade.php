@@ -68,7 +68,10 @@
 
                       <a class="dropdown-item {{ Request::is('profile/profile') ? "active": "" }} " href="{{url('profile/profile')}}">Profile</a>
                       <a class="dropdown-item {{ Request::is('profile/activity') ? "active": "" }} " href="{{url('profile/activity')}}">Activity</a>
+                      @if(Auth::user()->user_type=='SuperAdmin' || Auth::user()->user_type=='Admin' )
+
                       <a class="dropdown-item {{ Request::is('register') ? "active": "" }}" href="/register">Register User</a>
+                    @endif
 
                       <a class="dropdown-item" href="#">Change Password</a>
                       <a class="dropdown-item" href="{{ route('logout') }}"

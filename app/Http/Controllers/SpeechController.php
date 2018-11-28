@@ -17,7 +17,7 @@ class SpeechController extends Controller
      */
     public function index()
     {
-          	return view('pages.speech');
+          	return view('pages.speech.speech');
     }
 
     /**
