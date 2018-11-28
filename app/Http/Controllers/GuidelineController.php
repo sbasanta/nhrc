@@ -22,7 +22,7 @@ class GuidelineController extends Controller
     public function index()
     {
         $guidelines=Guideline::all();
-        return view('pages.guideline')->with('guideline',$guidelines);
+        return view('pages.guideline.guideline')->with('guideline',$guidelines);
     }
 
     /**
@@ -57,9 +57,9 @@ class GuidelineController extends Controller
     $guideline->link=$request->link;
      $guideline->addedby=auth()->user()->id;
     $guideline->status=$request->status;
-    
 
-    
+
+
 if($request->hasFile('file1'))
        {
        $file1=$request->file('file1');
@@ -72,7 +72,7 @@ if($request->hasFile('file1'))
 
        }
 
- 
+
 if($request->hasFile('file2'))
        {
        $file2=$request->file('file2');
@@ -88,7 +88,7 @@ if($request->hasFile('file2'))
     $guideline->save();
     Session::flash('success','New guideline successfully added');
     return back();
-    
+
 }
 
     /**
@@ -98,7 +98,7 @@ if($request->hasFile('file2'))
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
+    {
     $g1=Guideline::find($id);
     $filename1=$g1->file1;
     $location1 = public_path('uploads/guidelines/'.$filename1);
@@ -106,7 +106,7 @@ if($request->hasFile('file2'))
     }
 
      public function download($id)
-    {   
+    {
     $g2=Guideline::find($id);
     $filename2=$g2->file2;
     $location = public_path('uploads/guidelines/'.$filename2);
@@ -121,7 +121,7 @@ if($request->hasFile('file2'))
     public function edit($id)
     {
         $guideline=Guideline::find($id);
-       return view('pages.editguideline')->withguidelines($guideline);
+       return view('pages.guideline.editguideline')->withguidelines($guideline);
     }
 
     /**

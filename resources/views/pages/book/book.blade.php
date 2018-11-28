@@ -20,7 +20,6 @@
 
         <th>Action</th>
         @if(Auth::user()->user_type=='SuperAdmin' || Auth::user()->user_type=='Admin' )
-
           <th></th>
         @endif
       </tr>
@@ -214,71 +213,6 @@
         </div>
       </div>
 
-      {{--
-      @foreach($book as $editbook) --}}
-
-      <!-- Modal for edit -->
-      {{-- <div class="modal fade bd-example-modal-lg " id="edit{{$editbook->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content">
-      <form method="post" action="{{route('book.update', $editbook->id)}}" enctype="multipart/form-data" data-parsley-validate>
-      {{ csrf_field() }}
-      @method('put')
-      <div class="modal-header">
-      <h5 class="modal-title " id="exampleModalCenterTitle">Edit Book</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body ">
-  <div class="form-group">
-  <label for="title">English Title</label>
-  <input type="text" class="form-control" id="etitle" placeholder="Book title in English" name="etitle" required minlength="5" value="{{$editbook->etitle}}">
-</div>
-<div class="form-group">
-<label for="title">Nepali Title</label>
-<input type="text" class="form-control" id="ntitle" placeholder="Book title in Nepali" name="ntitle" required minlength="5" maxlength="200" value="{{$editbook->ntitle}}" height="20">
-</div>
-<div class="form-group row">
-<div class="col-md-4">
-<label for="title">Published Date</label>
-<input type="date" class="form-control" id="published_date" placeholder="Published date" name="published_date" value="{{$editbook->published_date}}">
-</div>
-<div class="col-md-8">
-<label for="title">Link/URL</label>
-<input type="text" class="form-control" id="link" placeholder="Any external links" name="link" value="{{$editbook->link}}">
-</div>
-</div>
-
-
-<div class="form-group row">
-<div class="col-md-1">
-<label for="file-to-upload" class="col-form-label"> File1 </label>
-</div>
-<div class="col-md-11">
-<input type="file" class="form-control" id="file1" name="file1" placeholder="file to upload">
-{{$editbook->file1}}
-
-</div>
-</div>
-<div class="form-group row">
-<div class="col-md-1">
-<label for="file-to-upload" class="col-form-label"> File2 </label>
-</div>
-<div class="col-md-11">
-<input type="file" class="form-control" id="file2" name="file2" placeholder="file to upload" >
-{{$editbook->file2}}
-</div>
-</div>
-
-</div>
-<div class="modal-footer">
-<input type="submit" class="btn btn-success" value="Update">
-<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></form>
-</div>
-</div>
-</div>
-</div> --}}
-{{-- @endforeach --}}
+    
 
 @endsection
