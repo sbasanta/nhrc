@@ -2,7 +2,7 @@
 
 @section('breadcrumb')
   <li class="breadcrumb-item active" aria-current="page"><a href="#">Publication</a></li>
-  <li class="breadcrumb-item active" aria-current="page"><a href="{{url('publication/guidelines')}}">Guideline</a></li>
+  <li class="breadcrumb-item active" aria-current="page"><a href="{{url('publication/guideline')}}">Guideline</a></li>
   <li class="breadcrumb-item active" aria-current="page">Edit</li>
 
   {{-- <li class="breadcrumb-item active" aria-current="page">{{$book->etitle}}</li> --}}
