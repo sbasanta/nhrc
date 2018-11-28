@@ -18,6 +18,8 @@
 Route::resource('/','IndexController');
 Route::resource('/publication/book','BookController');
 Route::resource('/publication/report','ReportController');
+Route::get('/publication/report/d/{id}',['uses' => 'ReportController@download','as'=>'report.download']);
+
 Route::resource('/publication/guideline','GuidelineController');
 //route to download file 2
 Route::get('/publication/guideline/d/{id}',['uses'=>'GuidelineController@download','as'=>'guideline.download']);
