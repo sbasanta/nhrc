@@ -21,6 +21,7 @@
 
       <div class="col-md-9">
         @include('partials.inc_breadcrumb')
+          @include('partials.inc_message')
 
         @yield('content')
       </div>
