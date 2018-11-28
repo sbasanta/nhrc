@@ -32,4 +32,8 @@ class User extends Authenticatable
   {
     return $this->hasMany('App\Model\Book','addedby');
   }
+     public function guidelines()
+  {
+    return $this->hasMany('App\Model\Guideline','addedby');
+  }
 }

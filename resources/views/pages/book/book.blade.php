@@ -28,7 +28,7 @@
       @foreach($books as $books)
         <tr>
           <td>{{date('j M Y', strtotime($books->created_at))}}</td>
-          <td> {{$books->etitle}} | {{$books->ntitle}} ({{date('M Y', strtotime($books->published_date))}})</td>
+          <td> {{$books->etitle}} | {{$books->ntitle}} (<b>Published on: </b>{{date('M Y', strtotime($books->published_date))}})</td>
 
           <td>
 

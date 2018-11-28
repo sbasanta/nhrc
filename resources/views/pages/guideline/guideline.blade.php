@@ -27,7 +27,7 @@ Add New Guideline
           @foreach($guideline as $guidelines)
           <tr>
             <td>{{date('j M Y', strtotime($guidelines->created_at))}}</td>
-            <td>{{$guidelines->etitle}} | {{$guidelines->ntitle}} ({{date('M Y', strtotime($guidelines->published_date))}})</td>
+            <td>{{$guidelines->etitle}} | {{$guidelines->ntitle}} (<b>Published on:</b> {{date('M Y', strtotime($guidelines->published_date))}})</td>
 
 
             <td><a href="{{route('guideline.show',$guidelines->id)}}" class="btn btn-outline-success  btn-sm mb-1">Download File1</a>

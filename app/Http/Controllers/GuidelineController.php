@@ -86,7 +86,7 @@ if($request->hasFile('file2'))
        }
 
     $guideline->save();
-    Session::flash('success','New guideline successfully added');
+    Session::flash('success','New Guideline successfully added');
     return back();
 
 }
@@ -182,7 +182,7 @@ if($request->hasFile('file2'))
 
      }
      $guideline->save();
-     Session::flash('success','guideline update Successfull!');
+     Session::flash('success','Guideline update Successfull!');
      return back();
    }
 
